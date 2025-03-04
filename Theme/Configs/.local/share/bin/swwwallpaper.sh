@@ -104,13 +104,13 @@ done
 #// set defaults
 
 [ -z "${xtrans}" ] && xtrans="grow"
-[ -z "${wallFramerate}" ] && wallFramerate=60
-[ -z "${wallTransDuration}" ] && wallTransDuration=0.4
+[ -z "${wallFramerate}" ] && wallFramerate=360
+[ -z "${wallTransDuration}" ] && wallTransDuration=2.4
 
 
 #// apply wallpaper
 echo ":: applying wall :: \"$(readlink -f "${wallSet}")\""
-swww img "$(readlink "${wallSet}")" --transition-bezier .43,1.19,1,.4 --transition-type "${xtrans}" --transition-duration "$wallTransDuration"
+swww img "$(readlink "${wallSet}")" --transition-bezier 2.43,2.19,.40,2.4 --transition-type "${xtrans}" --transition-duration "$wallTransDuration"
 
 if pgrep -x "swww-daemon" > /dev/null
 then
